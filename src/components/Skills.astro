@@ -1,0 +1,80 @@
+---
+const pct = (level: number) => `${(level / 5) * 100}%`;
+
+const networkSkills: [string, number][] = [
+  ["Linux (Ubuntu, Kali) / Windows", 5],
+  ["GNS3", 5],
+  ["Cisco Packet Tracer", 4],
+  ["Windows Server", 1],
+];
+
+const devSkills: [string, number][] = [
+  ["HTML / CSS / JS", 5],
+  ["PHP / Laravel", 4],
+  ["MySQL", 4],
+  ["PostgreSQL", 3],
+];
+
+const designSkills: [string, number][] = [
+  ["Figma / Canva", 5],
+];
+
+const languages: [string, string][] = [
+  ["Français", "Courant"],
+  ["Mooré", "Courant"],
+  ["Anglais", "Intermédiaire"],
+];
+---
+<section id="Skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <div>
+        <div class="kicker"><span class="num">03</span> — Compétences</div>
+        <h2 class="section-title">Ce que je <em>maîtrise</em></h2>
+      </div>
+      <p class="section-note">Une double compétence entre administration réseau &amp; systèmes et développement / design digital.</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Réseaux &amp; Systèmes</div>
+        {networkSkills.map(([name, level]) => (
+          <div class="skill-row has-bar">
+            <span class="name">{name}</span>
+            <div class="bar-track"><div class="bar-fill" style={`width:${pct(level)}`}></div></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Développement Web</div>
+        {devSkills.map(([name, level]) => (
+          <div class="skill-row has-bar">
+            <span class="name">{name}</span>
+            <div class="bar-track"><div class="bar-fill" style={`width:${pct(level)}`}></div></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Design &amp; Créativité</div>
+        {designSkills.map(([name, level]) => (
+          <div class="skill-row has-bar">
+            <span class="name">{name}</span>
+            <div class="bar-track"><div class="bar-fill" style={`width:${pct(level)}`}></div></div>
+          </div>
+        ))}
+      </div>
+
+      <div class="skill-group reveal">
+        <div class="skill-group-title">Langues</div>
+        {languages.map(([name, level]) => (
+          <div class="skill-row has-value">
+            <span class="name">{name}</span>
+            <span class="skill-value">{level}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
